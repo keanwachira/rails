@@ -33,7 +33,7 @@ class TransactionController < ApplicationController
   rescue Exception=> e #log exception
     resp = TransactionListResp.new(2, "FAILED",e.message,nil)
     render json: resp, status: 500
-  end
+  end 
   
   # get single transaction by id
   def show
