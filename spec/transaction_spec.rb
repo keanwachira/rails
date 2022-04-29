@@ -6,7 +6,7 @@ RSpec.describe 'transactions api', type: :request do
                 puts response.body
                 expect(JSON.parse(response.body)['status_code']).to eql(0)
                 expect(response).to have_http_status(:success)
-                # expect(JSON.parse(reponse.body)['transactions'].count).to eql(1)
+                expect(JSON.parse(response.body)['transactions'].size).to be >0
                 expect(JSON.parse(response.body)['status']).to eql('SUCCESS')
             end        
         end
